@@ -8,6 +8,7 @@ input.onGesture(Gesture.TiltRight, function () {
 })
 let Voyager: game.LedSprite = null
 Voyager = game.createSprite(2, 4)
+let Kazon = game.createSprite(0, 0)
 basic.forever(function () {
-	
+    basic.pause(300)
 })
