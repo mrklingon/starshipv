@@ -23,7 +23,7 @@ images.createBigImage(`
     . . . . . . . . . .
     `).scrollImage(1, 200)
 Voyager = game.createSprite(2, 4)
-let Kazon = game.createSprite(0, 0)
+let Kazon = game.createSprite(1, 0)
 game.setLife(3)
 basic.forever(function () {
     basic.pause(600)
