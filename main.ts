@@ -7,7 +7,11 @@ input.onGesture(Gesture.TiltRight, function () {
     Voyager.ifOnEdgeBounce()
 })
 let kmiss: game.LedSprite = null
+let Resource: game.LedSprite = null
 let Voyager: game.LedSprite = null
+Voyager = game.createSprite(2, 4)
+let Kazon = game.createSprite(0, 0)
+game.setLife(3)
 images.createBigImage(`
     . . . . . . . . . .
     . # # . . . . . . .
@@ -22,9 +26,24 @@ images.createBigImage(`
     . . . . . # # # . .
     . . . . . . . . . .
     `).scrollImage(1, 200)
-Voyager = game.createSprite(2, 4)
-let Kazon = game.createSprite(0, 0)
-game.setLife(3)
+basic.forever(function () {
+    basic.pause(5000)
+    while (true) {
+        if (randint(0, 100) > 85) {
+            Resource = game.createSprite(4, randint(0, 4))
+            Resource.turn(Direction.Right, 45)
+            for (let index = 0; index < 40; index++) {
+                Resource.move(1)
+                basic.pause(100)
+                if (Resource.isTouching(Voyager)) {
+                    game.addScore(1000)
+                }
+                Resource.ifOnEdgeBounce()
+            }
+            Resource.delete()
+        }
+    }
+})
 basic.forever(function () {
     basic.pause(2000)
     while (true) {
@@ -46,7 +65,7 @@ basic.forever(function () {
             } else {
                 game.addScore(50)
             }
+            kmiss.delete()
         }
-        kmiss.delete()
     }
 })
