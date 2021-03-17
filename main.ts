@@ -10,6 +10,9 @@ input.onButtonPressed(Button.B, function () {
     Voyager.change(LedSpriteProperty.X, 1)
     Voyager.ifOnEdgeBounce()
 })
+input.onGesture(Gesture.Shake, function () {
+    basic.showString(convertToText(game.score()))
+})
 input.onGesture(Gesture.TiltRight, function () {
     Voyager.change(LedSpriteProperty.X, 1)
     Voyager.ifOnEdgeBounce()
@@ -45,6 +48,7 @@ basic.forever(function () {
                 basic.pause(100)
                 if (Resource.isTouching(Voyager)) {
                     game.addScore(1000)
+                    game.addLife(1)
                 }
                 Resource.ifOnEdgeBounce()
             }
