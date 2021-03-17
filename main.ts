@@ -1,5 +1,13 @@
+input.onButtonPressed(Button.A, function () {
+    Voyager.change(LedSpriteProperty.X, -1)
+    Voyager.ifOnEdgeBounce()
+})
 input.onGesture(Gesture.TiltLeft, function () {
     Voyager.change(LedSpriteProperty.X, -1)
+    Voyager.ifOnEdgeBounce()
+})
+input.onButtonPressed(Button.B, function () {
+    Voyager.change(LedSpriteProperty.X, 1)
     Voyager.ifOnEdgeBounce()
 })
 input.onGesture(Gesture.TiltRight, function () {
