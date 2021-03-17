@@ -62,7 +62,7 @@ basic.forever(function () {
 basic.forever(function () {
     basic.pause(2000)
     while (true) {
-        basic.pause(300)
+        basic.pause(100)
         if (Kazon.get(LedSpriteProperty.X) < Voyager.get(LedSpriteProperty.X)) {
             Kazon.set(LedSpriteProperty.X, Kazon.get(LedSpriteProperty.X) + 1)
         }
