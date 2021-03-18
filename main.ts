@@ -29,7 +29,7 @@ images.createBigImage(`
     . . . . . . . . . .
     `).scrollImage(1, 200)
 images.createBigImage(`
-    . . . . . . . . . .
+    . # . . . . . . . .
     . . . . . # . . . .
     . # . . # # # # # #
     . . . . . # # # . .
@@ -48,9 +48,9 @@ basic.forever(function () {
                     game.addScore(1000)
                     game.addLife(1)
                     lives += 1
-                    if (lives > 3) {
-                        lives = 3
-                        game.setLife(3)
+                    if (lives > 2) {
+                        lives = 2
+                        game.setLife(2)
                     }
                 }
                 Resource.ifOnEdgeBounce()
