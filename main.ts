@@ -37,7 +37,7 @@ images.createBigImage(`
     `).scrollImage(1, 200)
 basic.forever(function () {
     basic.pause(5000)
-    while (true) {
+    while (!(game.isGameOver())) {
         if (randint(0, 100) > 85) {
             Resource = game.createSprite(4, randint(0, 4))
             Resource.turn(Direction.Right, 45)
@@ -61,7 +61,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     basic.pause(2000)
-    while (true) {
+    while (!(game.isGameOver())) {
         basic.pause(100)
         if (Kazon.get(LedSpriteProperty.X) < Voyager.get(LedSpriteProperty.X)) {
             Kazon.set(LedSpriteProperty.X, Kazon.get(LedSpriteProperty.X) + 1)
