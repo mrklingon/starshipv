@@ -29,7 +29,7 @@ images.createBigImage(`
     . . . . . . . . . .
     `).scrollImage(1, 200)
 images.createBigImage(`
-    . # . . . . . . . .
+    . . . . . . . . . .
     . . . . . # . . . .
     . # . . # # # # # #
     . . . . . # # # . .
@@ -83,5 +83,18 @@ basic.forever(function () {
             }
             kmiss.delete()
         }
+    }
+})
+basic.forever(function () {
+    if (game.score() > 25000) {
+        images.createBigImage(`
+            . . . . . . . . . .
+            . # # . . . . . . .
+            # # # # . . # # # .
+            . . # # # # # . . .
+            . . . . . . . . . .
+            `).scrollImage(1, 200)
+        basic.showString("You have reached the Alpha quadrant!!!")
+        game.gameOver()
     }
 })
