@@ -13,7 +13,7 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     music.playTone(131, music.beat(BeatFraction.Quarter))
     Droid += 1
-    if (true) {
+    if (Droid > 1) {
         Droid = 0
     }
 })
@@ -80,9 +80,6 @@ basic.forever(function () {
             Resource.turn(Direction.Right, 45)
             for (let index = 0; index < 40; index++) {
                 Resource.move(1)
-                if (Droid == 1) {
-                    Voyager.set(LedSpriteProperty.X, Resource.get(LedSpriteProperty.X))
-                }
                 basic.pause(100)
                 if (Resource.isTouching(Voyager)) {
                     game.addScore(1000)
